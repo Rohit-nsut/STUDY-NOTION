@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+    overflow-x: hidden;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #000814;
+    /* height: 5px; */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #838894;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: red;
+  }
+
+.codeblock1, .codeblock2 {
+    border-radius: 100%;
+    -webkit-filter: blur(34px);
+    filter: blur(60px);
+    height: 257.05px;
+    left: calc(50% - 263.005px);
+    opacity: .3;
+    top: calc(50% - 175.995px);
+    -webkit-transform: matrix(1,0,-.03,1,0,0);
+    transform: matrix(1,0,-.03,1,0,0);
+    width: 372.95px;
+}
+
+.codeblock1 {
+    background: linear-gradient(123.77deg,#8a2be2 -6.46%,orange 59.04%,#f8f8ff 124.53%);
+}
+
+.codeblock2 {
+    background: linear-gradient(118.19deg,#1fa2ff -3.62%,#12d8fa 50.44%,#a6ffcb 104.51%);
+}
+
+.HomePageBg {
+    background: url(../src/assets/Images/bghome.svg);
+}
+
+sup {
+    color: red;
+    font-size: 12px;
+    margin-left: 3px;
+}
+
+
+
+
+.spinner {
+   width: 56px;
+   height: 56px;
+   display: grid;
+   animation: spinner-plncf9 4s infinite;
+}
+
+.spinner::before,
+.spinner::after {
+   content: "";
+   grid-area: 1/1;
+   border: 9px solid;
+   border-radius: 50%;
+   border-color: #474bff #474bff #0000 #0000;
+   mix-blend-mode: darken;
+   animation: spinner-plncf9 1s infinite linear;
+}
+
+.spinner::after {
+   border-color: #0000 #0000 #dbdcef #dbdcef;
+   animation-direction: reverse;
+}
+
+@keyframes spinner-plncf9 {
+   100% {
+      transform: rotate(1turn);
+   }
+}
