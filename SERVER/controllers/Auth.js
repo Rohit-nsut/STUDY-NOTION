@@ -253,6 +253,27 @@ exports.login = async (req, res) => {
 };
 
 
+exports.contactEmail = async (req,res) => {
+
+    try {
+        console.log("g", req.body);
+        const {Email, Message, FirstName , LastName} = req.body;
+                
+        const emailResponse = await mailSender(
+            Email,
+            `My Name is ${FirstName} ${LastName}`,
+            Message,
+        )
+        
+    }
+    catch (error) {
+        res.status(400).json({
+            success: false,
+            message: "Error in sending mail "
+        })
+    }
+}
+
 
 // change Password
 exports.changePassword = async (req, res) => {

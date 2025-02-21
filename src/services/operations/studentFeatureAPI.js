@@ -3,34 +3,36 @@ import { studentEndpoints } from "../apis";
 import { apiConnector } from "../connectApi";
 import { setPaymentLoading } from "../../slices/courseSlice";
 import { resetCart } from "../../slices/cartSlice";
-import rzpLogo from "../../assets/Logo/rzp_logo.png"; 
+// import rzpLogo from "../../assets/Logo/rzp_logo.png"; 
 // import { verifyPayment } from "../../../SERVER/controllers/Payments";
 
-const RAZORPAY_KEY = "rzp_test_5hKFTLvUZlSapS"
+// const RAZORPAY_KEY = "rzp_test_5hKFTLvUZlSapS"
 // const RAZORPAY_SECRET = "q6D2OUktmprXwBRerLIWUE2z" 
 
 
-const {COURSE_PAYMENT_API, COURSE_VERIFY_API, SEND_PAYMENT_SUCCESS_EMAIL_API} = studentEndpoints;
+// const {COURSE_PAYMENT_API, COURSE_VERIFY_API, SEND_PAYMENT_SUCCESS_EMAIL_API} = studentEndpoints;
+
+const {COURSE_VERIFY_API} = studentEndpoints;
 
 
-function loadScript(src) {
+// function loadScript(src) {
 
-    return new Promise( (resolve) => {
-        const script = document.createElement("script");
+//     return new Promise( (resolve) => {
+//         const script = document.createElement("script");
 
-        script.src = src;
+//         script.src = src;
  
-        script.onload = () => {
-            resolve(true);
-        }
+//         script.onload = () => {
+//             resolve(true);
+//         }
 
-        script.onerror = () => {
-            resolve(false);
-        }
+//         script.onerror = () => {
+//             resolve(false);
+//         }
 
-        document.body.appendChild(script);
-    })
-}
+//         document.body.appendChild(script);
+//     })
+// }
 
 
 
@@ -130,26 +132,26 @@ export async function buyCourse (token, courses, userDetails, navigate, dispatch
 
 
 
-async function sendPaymentSuccessEmail(response, amount, token) {
-    console.log("send")
+// async function sendPaymentSuccessEmail(response, amount, token) {
+//     console.log("send")
  
-    try{
-        // console.log(2);
-        await apiConnector("POST", SEND_PAYMENT_SUCCESS_EMAIL_API, {
-            orderId: response.razorpay_order_id,
-            paymentId:response.razorpay_payment_id,
-            amount,
-        }, {
-            Authorization: `Bearer ${token}`,
-        })
-        // console.log(3,result);
-    }
+//     try{
+//         // console.log(2);
+//         await apiConnector("POST", SEND_PAYMENT_SUCCESS_EMAIL_API, {
+//             orderId: response.razorpay_order_id,
+//             paymentId:response.razorpay_payment_id,
+//             amount,
+//         }, {
+//             Authorization: `Bearer ${token}`,
+//         })
+//         // console.log(3,result);
+//     }
 
-    catch (error) {
-        console.log(4);
-        console.log("PAYMENT SUCCESS EMAIL ERROR...", error.message,error);
-    }
-}
+//     catch (error) {
+//         console.log(4);
+//         console.log("PAYMENT SUCCESS EMAIL ERROR...", error.message,error);
+//     }
+// }
 
 
 //verify Payment
