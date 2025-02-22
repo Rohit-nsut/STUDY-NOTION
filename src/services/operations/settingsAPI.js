@@ -93,7 +93,8 @@ export function updateDisplayPicture(token, formData) {
 
 export function deleteProfile(token, navigate) {
     return async (dispatch) => {
-        const toastId = toast.loading("Loading...")
+        const toastId = toast.loading("Loading...");
+        // console.log('1');
         try {
             const response = await apiConnector("DELETE", DELETE_PROFILE_API,)
             console.log("DELETE_PROFILE_API API RESPONSE................", response)
